@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+	<title> Register </title>
+	<head>
+	<h1>Gran Cucina Member Registration</h1>
+	</head>
+  <head>
+
+  </head>
+	<body>
+		<h3>Details</h3>
+		<form name="user_form" method="post" action="register_user.php">
+			<table border="0" style="width:100%,margin-top:20px">
+
+				<tr>
+				<td>First Name:</td><td> <input type= "text" name ="fname"></td>
+				</tr>
+				<tr>
+				<td>Last Name:</td><td> <input type= "text" name ="lname"></td>
+				</tr>
+				<tr>
+				<td>Username:</td><td> <input type= "text" name ="username"></td>
+				</tr>
+				<tr>
+				<td>Password:</td><td> <input type= "password" name ="password"></td>
+				</tr>
+				<tr>
+				<td>Email:</td><td> <input type= "text" name ="email"></td>
+				</tr>
+				<tr>
+				<td>Address:</td><td> <input type= "text" name ="address"></td>
+				</tr>
+				<tr>
+				<td>Telephone number:</td><td> <input type= "text" name ="tel_num"></td>
+				</tr>
+
+			</table><br>
+			<input type="submit" value="Proceed" />
+			<input type="button" name="clear" value="Clear Form" onclick="this.form.reset();">
+		</form>	
+
+	<script>
+		function clearForm(oForm) {
+    
+		var elements = oForm.elements; 
+    
+		oForm.reset();
+
+		for(i=0; i<elements.length; i++) {
+      
+			field_type = elements[i].type.toLowerCase();
+	
+		switch(field_type) {
+	
+		case "text": 
+		case "password": 
+		case "textarea":
+	        case "hidden":	
+			
+			elements[i].value = ""; 
+			break;
+        
+		case "radio":
+		case "checkbox":
+  			if (elements[i].checked) {
+   				elements[i].checked = false; 
+			}
+			break;
+
+		case "select-one":
+		case "select-multi":
+            		elements[i].selectedIndex = -1;
+			break;
+
+		default: 
+			break;
+			}
+		}
+	}
+	</script>
+	</body>
+</html>
